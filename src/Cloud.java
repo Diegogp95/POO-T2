@@ -13,9 +13,13 @@ public class Cloud {
                 return l;
         return null;
     }
+    public void addRollerShade(RollerShade rs){
+        rollerShades.add(rs);
+    }
     public void changeLampPowerState(int channel){
         Lamp l=getLampAtChannel(channel);
         if (l != null) l.changePowerState();
     }
     private ArrayList<Lamp> lamps;
+    private ArrayList<RollerShade> rollerShades;
 }

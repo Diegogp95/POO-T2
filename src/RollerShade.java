@@ -31,11 +31,6 @@ public class RollerShade extends DomoticDevice {
             animation= new Timeline(new KeyFrame(Duration.millis(DELTA*1000), this));
             animation.setCycleCount(Timeline.INDEFINITE);
         }
-        public enum MotorState {
-            UPWARD,
-            STOPPED,
-            DOWNWARD
-        }
         public void turnUp(){
             state = MotorState.UPWARD;
             animation.play();
@@ -65,6 +60,11 @@ public class RollerShade extends DomoticDevice {
         private MotorState state;
         private Timeline animation;
         private static final double DELTA=0.1;
+    }
+    public enum MotorState {
+        UPWARD,
+        STOPPED,
+        DOWNWARD
     }
     private RollerShadeView view;
     private Motor motor;

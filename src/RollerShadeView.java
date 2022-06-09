@@ -10,7 +10,7 @@ public class RollerShadeView extends Group {
         background.setFill(Color.BLUE);  // I chose Blue
         getChildren().add(background);
 
-        cloth = new Rectangle (/* ¿?*/);
+        cloth = new Rectangle (0d, width, );
         cloth.setFill(color);
         getChildren().add(cloth);
 
