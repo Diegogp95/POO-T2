@@ -1,3 +1,4 @@
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -22,4 +23,5 @@ public class LampControlView extends VBox {
         this.setPadding(new Insets(5));
         this.getChildren().addAll(view);
     }
+
 }

@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -24,5 +25,7 @@ public class Stage1 extends Application {
         primaryStage.setTitle("Domotic Devices Simulator");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        lampControl.getView().setOnMousePressed(e-> lampControl.pressPower() );
     }
 }
