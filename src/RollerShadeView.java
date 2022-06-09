@@ -30,7 +30,7 @@ public class RollerShadeView extends Group {
         getChildren().add(rightSide);
     }
     public void setLength(double length) {
-        // ¿?
+        cloth.setHeight(length);
     }
     private Rectangle cloth;
 }

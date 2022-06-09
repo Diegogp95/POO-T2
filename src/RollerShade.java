@@ -50,10 +50,10 @@ public class RollerShade extends DomoticDevice {
 
                     break;
                 case DOWNWARD:
-//¿?
+                    length += increment;
                     break;
                 case UPWARD:
-                    // ¿?
+                    length -= increment;
                     break;
             }
             view.setLength(length);
