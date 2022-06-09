@@ -21,7 +21,7 @@ public class Stage2 extends Application {
         pane.setPadding(new Insets(20));
         pane.setBottom(hBox);
         int shadeChannel=2;
-        RollerShade rs = new RollerShade(shadeChannel, 2, 150, 100);
+        RollerShade rs = new RollerShade(shadeChannel, 10, 150, 100);
         cloud.addRollerShade(rs);
         pane.setCenter(rs.getView());
         ShadeControl shadeControl = new ShadeControl(shadeChannel,cloud);

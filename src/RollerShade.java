@@ -51,9 +51,11 @@ public class RollerShade extends DomoticDevice {
                     break;
                 case DOWNWARD:
                     length += increment;
+                    LimitSwitchSensor();
                     break;
                 case UPWARD:
                     length -= increment;
+                    LimitSwitchSensor();
                     break;
             }
             view.setLength(length);
@@ -68,6 +70,22 @@ public class RollerShade extends DomoticDevice {
         STOPPED,
         DOWNWARD
     }
+    public void LimitSwitchSensor(){        // Sensor de fin de carrera, detiene el motor si se llega al sensor,
+        // se llama en cada avance de tiempo con motor UP o DOWN
+        if( length < 0){
+            length = 0;
+            this.stop();
+            return;
+        }
+        else {
+            if (length > MaxShadeLength){
+                length = MaxShadeLength;
+                this.stop();
+            }
+            return;
+        }
+    }
+
     private RollerShadeView view;
     private Motor motor;
     private double length;
