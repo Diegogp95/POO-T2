@@ -3,9 +3,11 @@ import javafx.scene.Node;
 public class Lamp {
     public Lamp (int channel){
         this.channel= channel;
-        r=g=b= 255;
+        r=g= 255;
+        b = 50;
         state = LampState.OFF;
         view = new LampView();
+        view.setColor((short)0,(short)0, (short)0);
     }
     public int getChannel(){
         return channel;

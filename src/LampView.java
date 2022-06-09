@@ -16,12 +16,20 @@ public class LampView extends Group {
                 27d, 50d,
                 22d, 50d,
                 22d, 20d});
-        base.setFill(Color.GREEN);
-        // ¿?
-        getChildren().addAll(base /* ¿? */);
+        base.setFill(Color.STEELBLUE);
+        Polygon top = new Polygon();
+        top.getPoints().addAll(new Double[]{
+                2d, 20d,
+                38d, 20d,
+                30d, 0d,
+                10d, 0d});
+        top.setFill(Color.LIMEGREEN);
+        lampshade = top;
+        getChildren().addAll(base, lampshade);
     }
     public void setColor(short r, short g, short b){
-        // ¿?
+        Color color = Color.rgb(r, g, b);
+        lampshade.setFill(color);
     }
     private Polygon lampshade;
 }
