@@ -8,6 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import javax.swing.text.html.ImageView;
+
 public class Stage1 extends Application {
     public void start(Stage primaryStage) {
         int lampChannel=1;
@@ -26,6 +28,6 @@ public class Stage1 extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        lampControl.getView().setOnMousePressed(e-> lampControl.pressPower() );
+        //lampControl.getView().setOnMousePressed(e-> lampControl.pressPower());
     }
 }

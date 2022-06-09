@@ -5,6 +5,7 @@ public class LampControl {
         this.channel= channel;
         cloud = c;
         view = new LampControlView(this);
+
     }
     public void pressPower(){
         cloud.changeLampPowerState(channel);

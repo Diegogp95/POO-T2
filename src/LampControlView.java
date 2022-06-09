@@ -17,6 +17,7 @@ public class LampControlView extends VBox {
         view.setFitHeight(0d);
         view.setScaleX(0.5d);
         view.setScaleY(0.5d);
+        view.setOnMousePressed(e-> lampControl.pressPower());
         this.setBackground(new Background(new BackgroundFill(Color.NAVY, new CornerRadii(10), new Insets(0)),
                 new BackgroundFill(Color.LIGHTCORAL, new CornerRadii(8), new Insets(1))));
         this.setAlignment(Pos.CENTER);
