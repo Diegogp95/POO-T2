@@ -25,7 +25,11 @@ public class Stage2 extends Application {
         cloud.addRollerShade(rs);
         pane.setCenter(rs.getView());
         ShadeControl shadeControl = new ShadeControl(shadeChannel,cloud);
-        hBox.getChildren().add(0,shadeControl.getView());
+        BorderPane rsControlView = shadeControl.getView();
+        rsControlView.setPrefSize(60,60);
+        rsControlView.setMaxHeight(60);
+        rsControlView.setMaxWidth(60);
+        hBox.getChildren().add(0,rsControlView);
         Scene scene = new Scene(pane, 300, 350);
         primaryStage.setTitle("Domotic Devices Simulator");
         primaryStage.setScene(scene);

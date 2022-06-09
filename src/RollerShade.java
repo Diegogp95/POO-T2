@@ -46,7 +46,9 @@ public class RollerShade extends DomoticDevice {
         public void handle (ActionEvent event){
             double increment = alpha*DELTA*RADIUS;
             switch (state) {
-                case STOPPED: break;
+                case STOPPED:
+
+                    break;
                 case DOWNWARD:
 //¿?
                     break;
