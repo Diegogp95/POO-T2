@@ -8,15 +8,13 @@ public class Cloud {
     public void addLamp(Lamp l){
         lamps.add(l);
     }
-    public Lamp getLampAtChannel( int channel){
-        for (Lamp l: lamps)
-            if (l.getChannel() ==channel)
-                return l;
-        return null;
-    }
+
     public void changeLampPowerState(int channel){
-        Lamp l=getLampAtChannel(channel);
-        if (l != null) l.changePowerState();
+        for (Lamp lamp: lamps){
+            if (lamp.getChannel() == channel){
+                lamp.changePowerState();
+            }
+        }
     }
 
     public void addRollerShade(RollerShade rs){

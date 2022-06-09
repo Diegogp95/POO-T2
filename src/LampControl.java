@@ -10,6 +10,5 @@ public class LampControl extends DomoticDeviceControl{
         cloud.changeLampPowerState(channel);
     }
     private int channel;
-    private Cloud cloud;
     private Pane view;
 }
