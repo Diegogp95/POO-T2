@@ -7,8 +7,7 @@ public class LampControl extends DomoticDeviceControl{
     }
     public Pane getView() { return view;}
     public void pressPower(){
-        cloud.changeLampPowerState(channel);
+        cloud.changeLampPowerState(getChannel());
     }
-    private int channel;
     private Pane view;
 }

@@ -49,8 +49,6 @@ public class ShadeControlView extends BorderPane {
         setBackground(new Background(new BackgroundFill(Color.NAVY, new CornerRadii(10), new Insets(0)),
                 new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(8), new Insets(1))));
 
-
-
         channelButton.setOnAction( e-> {sc.stop();});
         upButton.setOnMouseClicked( e-> {sc.startUp();} );
         downButton.setOnMouseClicked( e -> {sc.startDown();});
