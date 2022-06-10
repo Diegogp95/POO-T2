@@ -3,6 +3,7 @@ public abstract class DomoticDevice {
         channel = ch;
 
     }
+
     public int getChannel() {
         return channel;
     }

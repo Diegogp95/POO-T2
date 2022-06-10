@@ -69,6 +69,9 @@ public class Cloud {
         }
     }
 
+    public short showG(int channel){    //BORRAR
+        return lamps.get(0).getG();
+    }
 
     private ArrayList<Lamp> lamps;
     private ArrayList<RollerShade> rollerShades;
