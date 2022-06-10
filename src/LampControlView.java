@@ -1,6 +1,3 @@
-import javafx.beans.binding.Bindings;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -8,12 +5,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-
-import java.text.DecimalFormat;
 
 public class LampControlView extends VBox {
     public LampControlView(LampControl lampControl) {
@@ -48,14 +39,13 @@ public class LampControlView extends VBox {
         Label redValue = new Label("");
         sliderR.valueProperty().addListener(
                 (observable, oldValue, newValue) -> {
-                    redValue.setText(DecimalFormat.getNumberInstance().format(newValue));
+                    redValue.setText(""+newValue.intValue());
                     lampControl.changeR(newValue.shortValue());
                 });
         HBox controlR = new HBox();
         controlR.getChildren().addAll(redCaption, sliderR, redValue);
 
 
-        TextField testfield = new TextField();  //BORRAR
 
 
         /*  Slider G  */
@@ -67,11 +57,13 @@ public class LampControlView extends VBox {
         Label greenValue = new Label("255");
         sliderG.valueProperty().addListener(
                 (observable, oldValue, newValue) -> {
-                    greenValue.setText(DecimalFormat.getNumberInstance().format(newValue));
+                    greenValue.setText(""+newValue.intValue());
                     lampControl.changeG(newValue.shortValue());
                 });
         HBox controlG = new HBox();
         controlG.getChildren().addAll(greenCaption, sliderG, greenValue);
+
+
 
         /*  Slider B  */
         Slider sliderB = new Slider(0, 255, 0);
@@ -82,7 +74,7 @@ public class LampControlView extends VBox {
         Label blueValue = new Label("");
         sliderB.valueProperty().addListener(
                 (observable, oldValue, newValue) -> {
-                    blueValue.setText(DecimalFormat.getNumberInstance().format(newValue));
+                    blueValue.setText(""+newValue.intValue());
                     lampControl.changeB(newValue.shortValue());
                 });
         HBox controlB = new HBox();
