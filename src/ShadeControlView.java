@@ -10,7 +10,6 @@ import javafx.scene.shape.Polygon;
 
 public class ShadeControlView extends BorderPane {
     public ShadeControlView (ShadeControl sc){
-        ShadeControl shadeControl = sc;
         Button channelButton = new Button(""+sc.getChannel());
         setPadding(new Insets(2));
         Polygon upButton = new Polygon();
@@ -37,11 +36,24 @@ public class ShadeControlView extends BorderPane {
         downButton.setFill(Color.SALMON);
         leftButton.setFill(Color.SALMON);
         rightButton.setFill(Color.SALMON);
+        upButton.setScaleX(1.5);
+        upButton.setScaleY(1.5);
         setTop(upButton);
+        downButton.setScaleX(1.5);
+        downButton.setScaleY(1.5);
         setBottom(downButton);
+        leftButton.setScaleX(1.5);
+        leftButton.setScaleY(1.5);
         setLeft(leftButton);
+        rightButton.setScaleX(1.5);
+        rightButton.setScaleY(1.5);
         setRight(rightButton);
         setCenter(channelButton);
+        Insets insets = new Insets(5);
+        setMargin(upButton, insets);
+        setMargin(downButton, insets);
+        setMargin(leftButton, insets);
+        setMargin(rightButton, insets);
         setAlignment(upButton, Pos.CENTER);
         setAlignment(downButton, Pos.CENTER);
         setAlignment(leftButton, Pos.CENTER);
@@ -55,15 +67,15 @@ public class ShadeControlView extends BorderPane {
         upButton.setOnMouseClicked( e-> {sc.startUp();} );
         downButton.setOnMouseClicked( e -> {sc.startDown();});
         leftButton.setOnMouseClicked( e -> {
-            int ch = shadeControl.getChannel();
+            int ch = sc.getChannel();
             if (ch > 1){ch -= 1;}
-            shadeControl.setChannel(ch);
+            sc.setChannel(ch);
             channelButton.setText(""+ch);
         });
         rightButton.setOnMouseClicked( e -> {
-            int ch = shadeControl.getChannel();
+            int ch = sc.getChannel();
             if (ch < 10){ch += 1;}
-            shadeControl.setChannel(ch);
+            sc.setChannel(ch);
             channelButton.setText(""+ch);
         });
     }

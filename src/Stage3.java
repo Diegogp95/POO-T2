@@ -6,7 +6,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class Stage2 extends Application {
+public class Stage3 extends Application {
     public void start(Stage primaryStage) {
         int lampChannel1=2;
         int lampChannel2=3;
@@ -21,20 +21,23 @@ public class Stage2 extends Application {
         HBox hBox = new HBox(20);
         hBox.setPadding(new Insets(20));
         hBox.setAlignment(Pos.CENTER);
+        lampControl.getView().setPrefSize(140,130);
+        lampControl.getView().setMaxHeight(130);
+        lampControl.getView().setMaxWidth(140);
         hBox.getChildren().addAll(lamp1.getView(),lamp2.getView(), lampControl.getView());
         BorderPane pane = new BorderPane();
         pane.setPadding(new Insets(20));
         pane.setBottom(hBox);
 
-        int shadeChannel=2;
+        int shadeChannel=1;
         RollerShade rs = new RollerShade(shadeChannel, 10, 150, 100);
         cloud.addRollerShade(rs);
         pane.setCenter(rs.getView());
         ShadeControl shadeControl = new ShadeControl(shadeChannel,cloud);
         BorderPane rsControlView = shadeControl.getView();
-        rsControlView.setPrefSize(60,60);
-        rsControlView.setMaxHeight(60);
-        rsControlView.setMaxWidth(60);
+        rsControlView.setPrefSize(80,80);
+        rsControlView.setMaxHeight(80);
+        rsControlView.setMaxWidth(80);
         hBox.getChildren().add(0,rsControlView);
         Scene scene = new Scene(pane, 600, 500);
         primaryStage.setTitle("Domotic Devices Simulator");
