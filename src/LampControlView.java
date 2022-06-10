@@ -49,7 +49,7 @@ public class LampControlView extends VBox {
         sliderR.valueProperty().addListener(
                 (observable, oldValue, newValue) -> {
                     redValue.setText(DecimalFormat.getNumberInstance().format(newValue));
-                    lampControl.changeR((double)newValue);
+                    lampControl.changeR(newValue.shortValue());
                 });
         HBox controlR = new HBox();
         controlR.getChildren().addAll(redCaption, sliderR, redValue);
@@ -68,8 +68,7 @@ public class LampControlView extends VBox {
         sliderG.valueProperty().addListener(
                 (observable, oldValue, newValue) -> {
                     greenValue.setText(DecimalFormat.getNumberInstance().format(newValue));
-                    lampControl.changeG((double)newValue);
-                    testfield.setText(""+lampControl.cloud.showG(lampControl.getChannel())); //BORRAR
+                    lampControl.changeG(newValue.shortValue());
                 });
         HBox controlG = new HBox();
         controlG.getChildren().addAll(greenCaption, sliderG, greenValue);
@@ -84,14 +83,14 @@ public class LampControlView extends VBox {
         sliderB.valueProperty().addListener(
                 (observable, oldValue, newValue) -> {
                     blueValue.setText(DecimalFormat.getNumberInstance().format(newValue));
-                    lampControl.changeB((double)newValue);
+                    lampControl.changeB(newValue.shortValue());
                 });
         HBox controlB = new HBox();
         controlB.getChildren().addAll(blueCaption, sliderB, blueValue);
 
 
 
-        getChildren().addAll(view,spinner,controlR,controlG,controlB,testfield);
+        getChildren().addAll(view,spinner,controlR,controlG,controlB);
 
     }
 }

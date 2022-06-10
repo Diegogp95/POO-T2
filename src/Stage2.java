@@ -8,18 +8,24 @@ import javafx.stage.Stage;
 
 public class Stage2 extends Application {
     public void start(Stage primaryStage) {
-        int lampChannel=1;
+        int lampChannel1=2;
+        int lampChannel2=3;
+
         Cloud cloud = new Cloud();
-        Lamp lamp = new Lamp(lampChannel);
-        cloud.addLamp(lamp);
-        LampControl lampControl = new LampControl(lampChannel, cloud);
+        Lamp lamp1 = new Lamp(lampChannel1);
+        Lamp lamp2 = new Lamp(lampChannel2);
+        cloud.addLamp(lamp1);
+        cloud.addLamp(lamp2);
+        LampControl lampControl = new LampControl(lampChannel1, cloud);
+
         HBox hBox = new HBox(20);
         hBox.setPadding(new Insets(20));
         hBox.setAlignment(Pos.CENTER);
-        hBox.getChildren().addAll(lamp.getView(), lampControl.getView());
+        hBox.getChildren().addAll(lamp1.getView(),lamp2.getView(), lampControl.getView());
         BorderPane pane = new BorderPane();
         pane.setPadding(new Insets(20));
         pane.setBottom(hBox);
+
         int shadeChannel=2;
         RollerShade rs = new RollerShade(shadeChannel, 10, 150, 100);
         cloud.addRollerShade(rs);

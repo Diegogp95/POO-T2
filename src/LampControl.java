@@ -9,15 +9,15 @@ public class LampControl extends DomoticDeviceControl{
     public void pressPower(){
         cloud.changeLampPowerState(getChannel());
     }
-    public void changeR(double R){
+    public void changeR(short R){
         cloud.changeRED(getChannel(), R);
     }
 
-    public void changeG(double G){
+    public void changeG(short G){
         cloud.changeGREEN(getChannel(),G);
     }
 
-    public void changeB(double B){
+    public void changeB(short B){
         cloud.changeBLUE(getChannel(), B);
     }
 

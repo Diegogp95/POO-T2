@@ -16,29 +16,26 @@ public class Cloud {
             }
         }
     }
-    public void changeRED(int channel, double R){
+    public void changeRED(int channel, short R){
         for (Lamp lamp: lamps){
             if (lamp.getChannel() == channel){
-                short r = (short)R;
-                lamp.setR(r);
+                lamp.setR(R);
             }
         }
     }
 
-    public void changeBLUE(int channel, double B){
+    public void changeBLUE(int channel, short B){
         for (Lamp lamp: lamps){
             if (lamp.getChannel() == channel){
-                short b = (short)B;
-                lamp.setB(b);
+                lamp.setB(B);
             }
         }
     }
 
-    public void changeGREEN(int channel, double G){
+    public void changeGREEN(int channel, short G){
         for (Lamp lamp: lamps){
             if (lamp.getChannel() == channel){
-                short g = (short)G;
-                lamp.setG(g);
+                lamp.setG(G);
             }
         }
     }
@@ -67,10 +64,6 @@ public class Cloud {
                 rs.stop();
             }
         }
-    }
-
-    public short showG(int channel){    //BORRAR
-        return lamps.get(0).getG();
     }
 
     private ArrayList<Lamp> lamps;

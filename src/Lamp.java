@@ -44,10 +44,6 @@ public class Lamp extends DomoticDevice{
         }
     }
 
-    public short getG() {   //BORRAR
-        return g;
-    }
-
     private short r,g,b;
     private LampState state;
     private LampView view;
