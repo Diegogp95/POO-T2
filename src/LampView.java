@@ -31,5 +31,8 @@ public class LampView extends Group {
         Color color = Color.rgb(r, g, b);
         lampshade.setFill(color);
     }
+
+
+
     private Polygon lampshade;
 }

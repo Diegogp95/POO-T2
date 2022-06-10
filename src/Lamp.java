@@ -25,6 +25,28 @@ public class Lamp extends DomoticDevice{
         OFF
     }
 
+    public void setR(short R){
+        if (state == LampState.ON){
+            this.r = R ;
+            view.setColor(r,g,b);
+        }
+    }
+
+    public void setG(short G){
+        if (state == LampState.ON){
+            this.g = G ;
+            view.setColor(r,g,b);
+        }
+    }
+
+
+    public void setB(short B){
+        if (state == LampState.ON){
+            this.b = B ;
+            view.setColor(r,g,b);
+        }
+    }
+
     private int channel;
     private short r,g,b;
     private LampState state;

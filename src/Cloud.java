@@ -16,6 +16,33 @@ public class Cloud {
             }
         }
     }
+    public void changeRED(int channel, double R){
+        for (Lamp lamp: lamps){
+            if (lamp.getChannel() == channel){
+                short r = (short)R;
+                lamp.setR(r);
+            }
+        }
+    }
+
+    public void changeBLUE(int channel, double B){
+        for (Lamp lamp: lamps){
+            if (lamp.getChannel() == channel){
+                short b = (short)B;
+                lamp.setB(b);
+            }
+        }
+    }
+
+    public void changeGREEN(int channel, double G){
+        for (Lamp lamp: lamps){
+            if (lamp.getChannel() == channel){
+                short g = (short)G;
+                lamp.setG(g);
+            }
+        }
+    }
+
 
     public void addRollerShade(RollerShade rs){
         rollerShades.add(rs);

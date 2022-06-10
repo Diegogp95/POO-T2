@@ -30,7 +30,7 @@ public class Stage2 extends Application {
         rsControlView.setMaxHeight(60);
         rsControlView.setMaxWidth(60);
         hBox.getChildren().add(0,rsControlView);
-        Scene scene = new Scene(pane, 300, 350);
+        Scene scene = new Scene(pane, 600, 500);
         primaryStage.setTitle("Domotic Devices Simulator");
         primaryStage.setScene(scene);
         primaryStage.show();
