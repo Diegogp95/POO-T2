@@ -10,8 +10,16 @@ import javafx.scene.shape.Polygon;
 
 public class ShadeControlView extends BorderPane {
     public ShadeControlView (ShadeControl sc){
+        /* Seteado de fondo de control */
+        setBackground(new Background(new BackgroundFill(Color.NAVY, new CornerRadii(10), new Insets(0)),
+                new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(8), new Insets(1))));
+
+        /* Carga botón de encendido/apagado */
         Button channelButton = new Button(""+sc.getChannel());
         setPadding(new Insets(2));
+        setCenter(channelButton);
+
+        /* Crea poligonos para botones */
         Polygon upButton = new Polygon();
         Polygon downButton = new Polygon();
         Polygon leftButton = new Polygon();
@@ -48,7 +56,6 @@ public class ShadeControlView extends BorderPane {
         rightButton.setScaleX(1.5);
         rightButton.setScaleY(1.5);
         setRight(rightButton);
-        setCenter(channelButton);
         Insets insets = new Insets(5);
         setMargin(upButton, insets);
         setMargin(downButton, insets);
@@ -58,11 +65,8 @@ public class ShadeControlView extends BorderPane {
         setAlignment(downButton, Pos.CENTER);
         setAlignment(leftButton, Pos.CENTER);
         setAlignment(rightButton, Pos.CENTER);
-        setBackground(new Background(new BackgroundFill(Color.NAVY, new CornerRadii(10), new Insets(0)),
-                new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(8), new Insets(1))));
 
-
-
+        /* EventHandlers para botones */
         channelButton.setOnAction( e-> {sc.stop();});
         upButton.setOnMouseClicked( e-> {sc.startUp();} );
         downButton.setOnMouseClicked( e -> {sc.startDown();});

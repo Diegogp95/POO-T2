@@ -4,6 +4,7 @@ import javafx.scene.shape.Polygon;
 
 public class LampView extends Group {
     public LampView () {
+        /* Báse de lámpara */
         Polygon base = new Polygon();
         base.getPoints().addAll(new Double[]{
                 18d, 20d,
@@ -17,22 +18,30 @@ public class LampView extends Group {
                 22d, 50d,
                 22d, 20d});
         base.setFill(Color.STEELBLUE);
-        Polygon top = new Polygon();
-        top.getPoints().addAll(new Double[]{
+        base.setStroke(Color.BLACK);
+        base.setStrokeWidth(0.4);
+
+        /* Poligono que simula luz de lámpara */
+        light = new Polygon();
+        light.getPoints().addAll(new Double[]{
                 2d, 20d,
                 38d, 20d,
                 30d, 0d,
                 10d, 0d});
-        top.setFill(Color.LIMEGREEN);
-        lampshade = top;
-        getChildren().addAll(base, lampshade);
+
+        /* Cortina de lámpara */
+        Polygon lampShade = new Polygon();
+        lampShade.getPoints().addAll(light.getPoints());
+        Color shadeFill = Color.LIMEGREEN;
+        lampShade.setFill(new Color(shadeFill.getRed(),shadeFill.getGreen(), shadeFill.getBlue(), 0.55));
+        lampShade.setStroke(Color.BLACK);
+        lampShade.setStrokeWidth(0.4);
+
+        getChildren().addAll(base, light, lampShade);
     }
     public void setColor(short r, short g, short b){
         Color color = Color.rgb(r, g, b);
-        lampshade.setFill(color);
+        light.setFill(color);
     }
-
-
-
-    private Polygon lampshade;
+    private Polygon light;
 }
