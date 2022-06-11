@@ -7,12 +7,12 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class RollerShade extends DomoticDevice {
-    public RollerShade (int channel, double alpha, double width, double len) {
+    public RollerShade (int channel, double alpha, double width, double len, String videoSrc, Color color) {
         super(channel);
         motor = new Motor(alpha);
         MaxShadeLength = len;
         this.length = 0;  // Start with roller shade open.
-        view = new RollerShadeView(MaxShadeLength, width, length, RADIUS, Color.GREEN);
+        view = new RollerShadeView(MaxShadeLength, width, length, RADIUS, color, videoSrc);
     }
     public Group getView() { return view;}
     public void startUp(){
